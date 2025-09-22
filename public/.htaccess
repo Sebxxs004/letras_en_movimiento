@@ -1,5 +1,10 @@
 RewriteEngine On
 RewriteBase /letras_en_movimiento/public/
+
+# Si acceden directamente a la raíz del public, redirigir al login
+RewriteRule ^$ auth/login [R=302,L]
+RewriteRule ^index\.php$ auth/login [R=302,L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php?route=$1 [QSA,L]

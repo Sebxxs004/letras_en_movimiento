@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Redirección principal: si acceden a la raíz, ir al login
+RewriteRule ^$ public/auth/login [R=302,L]
+RewriteRule ^index\.php$ public/auth/login [R=302,L]
+
+# Reescribir URLs para que funcionen sin "public"
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/$1 [L]
+
+# Si el archivo no existe en public, intentar con index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^public/(.*)$ public/index.php [L]

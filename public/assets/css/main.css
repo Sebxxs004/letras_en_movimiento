@@ -1,0 +1,169 @@
+html, body{min-height:100%;}
+*{box-sizing:border-box}body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;margin:0;background:#fff7fb;color:#333}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#ffb3d1;color:#4a0033}
+.nav .links a{margin:0 8px;color:#4a0033;text-decoration:none;font-weight:600}
+.brand{font-weight:800}
+.container{max-width:980px;margin:20px auto;padding:0 16px}
+.card{background:#fff;border-radius:16px;padding:16px;margin-bottom:16px;box-shadow:0 6px 16px rgba(0,0,0,.06)}
+.btn{background:#ff4da6;border:0;color:#fff;padding:10px 16px;border-radius:10px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.big{font-size:18px;padding:14px 22px}
+.alert{padding:10px;border-radius:8px;margin:10px 0}
+.alert.error{background:#ffd6e7}
+.alert.info{background:#e6f7ff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.tile{background:#ffe6f2;border-radius:16px;padding:20px;text-align:center;text-decoration:none;color:#4a0033;font-weight:700}
+.hero{background:#fff0f6;border-radius:16px;padding:20px;margin-bottom:16px}
+label{display:block;margin:8px 0 4px}
+input,select,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid #ddd}
+table{width:100%;border-collapse:collapse}
+th,td{border-bottom:1px solid #eee;padding:8px;text-align:left}
+.footer{text-align:center;padding:20px;color:#666}
+.note{font-size:12px;color:#555}
+@media (max-width:600px){.nav .links a{margin:0 4px}}
+.drag-letter{display:inline-flex;justify-content:center;align-items:center;width:48px;height:48px;background:#fff;border-radius:12px;border:2px dashed #ff4da6;margin:6px;font-size:22px;font-weight:800;cursor:grab}
+.drop-slot{display:inline-flex;justify-content:center;align-items:center;width:52px;height:52px;background:#e6fffb;border-radius:12px;border:2px solid #13c2c2;margin:6px;font-size:18px}
+.progress{background:#ffe6f2;border-radius:12px;overflow:hidden;height:16px;margin:8px 0}
+.progress > div{background:#ff4da6;height:100%;width:0%}
+
+.wordgrid td.ws-sel{ background:#ffe6f2 !important; }
+.wordgrid td.ws-found{ background:#ffb3d1 !important; font-weight:700; }
+
+.nav{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#ffb3d1;color:#4a0033;position:relative}
+.nav .toggle{display:none;background:transparent;border:0;font-size:24px;line-height:1;color:#4a0033;cursor:pointer;margin-left:auto}
+.nav .links{display:flex;gap:8px}
+@media (max-width: 768px){
+  .nav .toggle{display:block}
+  .nav .links{display:none;position:absolute;right:12px;top:54px;background:#fff;border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.12);padding:8px;min-width:160px;flex-direction:column}
+  .nav.open .links{display:flex}
+  .nav .links a{display:block;padding:10px 12px;margin:0;color:#4a0033}
+}
+
+.brand{display:flex;align-items:center;gap:8px;font-weight:700}
+.brand-logo{height:32px;width:auto;display:block}
+@media (max-width:768px){ .brand-logo{height:28px} }
+
+/* Backgrounds */
+.page-login { background: url('../img/login-bg.jpg') center/cover fixed no-repeat; }
+.page-games { background: url('../img/games-bg.jpg') center/cover fixed no-repeat; }
+.page-login .container, .page-games .container { background: transparent; }
+
+/* Grade modal */
+.grade-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:9999}
+.grade-modal{background:#fff;border-radius:16px;max-width:420px;width:92%;padding:20px;box-shadow:0 20px 40px rgba(0,0,0,.2);text-align:center}
+.grade-modal img{max-width:160px;margin:8px auto 12px;display:block}
+.grade-modal h3{margin:8px 0 4px;font-size:22px}
+.grade-modal p{margin:4px 0 12px}
+.grade-modal .close{margin-top:6px}
+.grade-btn{position:fixed;right:16px;bottom:16px;border:0;border-radius:999px;padding:12px 16px;background:#ff8ac2;color:#4a0033;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,.15);cursor:pointer;z-index:9999}
+.grade-btn:hover{transform:translateY(-1px)}
+
+
+/* Responsive helpers */
+img, video{max-width:100%;height:auto}
+table{width:100%;border-collapse:collapse}
+th, td{padding:8px;text-align:left;vertical-align:top}
+@media (max-width: 768px){
+  .hero{padding:16px}
+  h1{font-size:28px}
+  h2{font-size:22px}
+  h3{font-size:18px}
+  .btn.big{font-size:16px;padding:12px 18px}
+  .card table{display:block;overflow-x:auto;white-space:nowrap}
+}
+
+
+/* Finish modal / recuadros */
+.finish-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:10000}
+.finish-modal{background:#fff;border-radius:18px;max-width:620px;width:92%;padding:24px 20px;text-align:center;box-shadow:0 22px 44px rgba(0,0,0,.25)}
+.finish-modal img{width:120px;height:auto;margin:6px auto 10px;display:block}
+.finish-modal h2{font-size:28px;margin:6px 0 2px}
+.finish-modal p{opacity:.9;margin:6px 0 16px}
+.finish-modal .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.finish-modal .btn{min-width:150px}
+.btn.orange{background:#ffa31a;color:#4a0033}
+.btn.green{background:#7ed957;color:#174d2b}
+@media (max-width:480px){ .finish-modal h2{font-size:24px} .finish-modal img{width:92px} }
+
+.btn.primary{background:#ff72b6;color:#3b0030}
+
+
+/* === Buildword: estilo de fichas y huecos con borde punteado rosa === */
+#buildword .card{ background:#fff; border-radius:22px; padding:16px; box-shadow:0 6px 22px rgba(0,0,0,.06); }
+#buildword .level{ font-weight:600; margin-bottom:8px; }
+#buildword .bar{ background:#ffd2e8; border-radius:8px; overflow:hidden; height:8px; margin:10px 0 18px; }
+
+#buildword .area{ margin-top:10px; }
+#buildword .slots{ display:flex; gap:10px; flex-wrap:wrap; margin:0 0 14px; }
+
+#buildword .drop-slot{
+  width:64px; height:64px;
+  display:inline-flex; align-items:center; justify-content:center;
+  border:3px dashed #ff5cab; border-radius:16px;
+  background:#fff;
+  color:#2b2b2b; font-weight:800; font-size:24px;
+  user-select:none;
+  transition:transform .08s;
+}
+#buildword .drop-slot.filled{ background:#fff; /* mantener punteado */ }
+
+#buildword .pool{ display:flex; gap:10px; flex-wrap:wrap; }
+#buildword .pool .drag{
+  width:64px; height:64px;
+  border:3px dashed #ff5cab; border-radius:16px;
+  background:#fff; color:#2b2b2b;
+  font-weight:800; font-size:24px; line-height:58px;
+  cursor:pointer;
+  transition:transform .08s, opacity .2s;
+  box-shadow:0 3px 0 rgba(255,92,171,.25) inset;
+}
+#buildword .pool .drag:hover{ transform:translateY(-1px); }
+#buildword .pool .drag:active{ transform:translateY(0); }
+#buildword .pool .drag.used, #buildword .pool .drag:disabled{
+  opacity:.45; text-decoration:line-through; cursor:not-allowed;
+}
+
+@media (max-width:560px){
+  #buildword .drop-slot, #buildword .pool .drag{ width:56px; height:56px; font-size:22px; border-radius:14px; }
+}
+
+.btn.vowel{background:#fff;border:2px solid #ff5cab;border-radius:12px;padding:10px 16px;font-weight:800;color:#333}
+
+
+/* === Bloom/Glow effect utility === */
+.bloom-glow {
+  position: relative;
+  isolation: isolate;
+}
+.bloom-glow::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 20px;
+  z-index: -1;
+  filter: blur(14px);
+  opacity: 0.55;
+  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.5), transparent 40%),
+              radial-gradient(circle at 70% 80%, rgba(255,255,255,0.35), transparent 55%);
+}
+.bloom-strong::before {
+  filter: blur(22px);
+  opacity: 0.7;
+}
+/* Optional glow for buttons */
+.button-glow {
+  box-shadow: 0 0 8px rgba(255,255,255,0.45), 0 0 20px rgba(0,0,0,0.15) inset;
+  transition: box-shadow .25s ease, transform .15s ease;
+}
+.button-glow:hover {
+  box-shadow: 0 0 12px rgba(255,255,255,0.65), 0 0 28px rgba(0,0,0,0.25) inset;
+  transform: translateY(-1px);
+}
+
+
+
+/* === Center letters in word search cells === */
+/* Ensure square cells keep vertical centering regardless of line-height issues */
+.sopa-celda, .grid-cell, .cell-sopa, .ws-cell {
+  line-height: 1;
+}
+
